@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 
-class DecksModel(models.Model):
+class Decks(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE, default=1)
     
@@ -15,7 +15,7 @@ class DecksModel(models.Model):
     
 
 class Cards(models.Model):
-    deck = models.ForeignKey(DecksModel, on_delete=models.CASCADE)
+    deck = models.ForeignKey(Decks, on_delete=models.CASCADE)
     name = models.CharField(max_length=65)
     desc = models.CharField(max_length=200)
     api_id = models.CharField(max_length=100)

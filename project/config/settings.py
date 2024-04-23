@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['*']
 # See https://docs.djangoproject.com/en/5.0/ref/settings/#force-script-name
 
 FORCE_SCRIPT_NAME = os.getenv('PROXY_SCRIPT_NAME', None)
-
+# APPEND_SLASH=False
 
 # Application definition
 

@@ -24,6 +24,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+# router.register(r'decks', views.HandleDecks)
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -38,6 +39,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('decks', views.HandleDecks.as_view()),
+    path('decks/', views.HandleDecks.as_view()),
     # path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger'),
     # path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='redoc'),
 ]

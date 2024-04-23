@@ -1,3 +1,8 @@
 from django.contrib import admin
+from apps.api.models import Decks, Cards
 
-# Register your models here.
+class AuthorAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Cards, AuthorAdmin)
+admin.site.register(Decks, AuthorAdmin)
